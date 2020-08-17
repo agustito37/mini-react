@@ -4,7 +4,7 @@
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js --colors",
-    "start": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+    "start": "webpack-dev-server --config webpack/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",
@@ -49,7 +49,10 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
+    "@babel/plugin-transform-spread": "^7.11.0",
     "@babel/polyfill": "^7.10.4",
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "htm": "^3.0.4",
+    "snabbdom": "^1.0.1"
   }
 }
