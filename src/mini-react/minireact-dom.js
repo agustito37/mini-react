@@ -5,14 +5,14 @@ import MiniReact from './minireact';
 const reconcile = init([propsModule]);
 
 MiniReact.__updater = (componentInstance) => {
-  const oldElement = componentInstance.__old_element;
-  const newElement = componentInstance.render();
+  const oldElements = componentInstance.__old_elements;
+  const newElements = componentInstance.render();
 
-  componentInstance.__old_element = reconcile(oldElement, newElement);
+  componentInstance.__old_elements = reconcile(oldElements, newElements);
 };
 
-const initRender = (el, rootDomElement) => {
-  reconcile(rootDomElement, el);
+const initRender = (elements, rootDomElement) => {
+  reconcile(rootDomElement, elements);
 };
 
 const MiniReactDOM =  { 

@@ -5,12 +5,11 @@ const createElement = (type, props = {}, ...children) => {
   if (typeof (type) == 'function') {
     const instance = new type(props);
     const elements = instance.render();
-    instance.__old_element = elements;
-    return instance.__old_element;
+    instance.__old_elements = elements;
+    return instance.__old_elements;
   }
 
   const element = h(type, { props }, children);
-  console.log(element);
   return element;
  };
 
